@@ -5,6 +5,12 @@ defined by what they **are**, not by what they do.
 
 ## Language
 
+**Playbook**:
+What this repository is: the **Chain**, one **Runbook** per phase, and the decisions between
+them — written first for a reader with five minutes and second for whoever runs a fleet from
+it. Not a reference architecture, which promises diagrams where this has commands.
+_Avoid_: "method repository," "portfolio," "reference architecture," "framework"
+
 **Chain**:
 The ordered set of hops between a sealed box and a machine someone can work on. Named as a
 chain because the interesting failures are at the joints, not inside the links.
@@ -12,8 +18,15 @@ _Avoid_: "workflow," "pipeline," "onboarding flow"
 
 **Hop**:
 One transition in the **Chain**, owned end to end by one mechanism. A hop is the unit that
-gets verified; a phase is only a container for hops.
+gets verified; a phase is the boundary of **Acceptance** — what proves a phase is usually one
+outcome across several hops — and is published as one **Runbook**.
 _Avoid_: "step," "stage," "task"
+
+**Runbook**:
+One phase, as published: prerequisites, its **Hops**, how the phase fails, a verification row
+per hop, one **Acceptance**, one **Escape Hatch**. A command appears wherever a **Lab Tier** can
+produce it; a script appears only where one was run.
+_Avoid_: "guide," "procedure," "SOP," "checklist"
 
 **Lab Tier**:
 One of three declared environment levels — minimum, mid, full — each stating exactly which

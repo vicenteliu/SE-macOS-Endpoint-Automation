@@ -121,7 +121,46 @@ flipped. Neither phase was written with the other in mind, which is how it was f
 📌 **The pattern worth keeping**: all three corrections came from being asked why something was
 missing. None came from reviewing the file. This record does not find its own errors.
 
-## What actually remains — depth, not coverage
+## What actually remains — in this order
+
+**The rule changes here.** Everything above was *depth first*, one phase at a time, because a
+reader could not yet judge what a finished section looked like. Six are finished. What is
+missing now is not depth in any one phase; it is the two things that turn a *described* chain
+into something you can run a fleet from: **an entry point for someone who has just inherited
+one, and commands where there are only checks.**
+
+### 1. `docs/03-inheriting-a-fleet.md`
+
+The verification rows already written in the six phases, re-ordered into the sequence you
+actually run them in when you arrive at an estate you did not build — reconcile the ownership
+record first, find out *how* things enrolled second, take a key out of escrow third — each with
+**what you decide from the answer**. No employer, no fleet; the order is the content.
+
+Why first: it is the page that makes this repository a playbook rather than a description of a
+chain, and it is the cheapest page here — nothing in it is new, only the order and the decision
+column.
+
+### 2. Phase 3 — the lab's own files
+
+The two packaging-automation overrides, the generated item metadata, and the manifest, under
+`phases/3-software/lab/`, labelled with the boundary they carry: *as run — one machine, one
+afternoon, two applications, no fleet.* The only phase with a run behind it is the only phase
+allowed to ship files.
+
+### 3. A **Command** column in every Verification table
+
+Phase 3 has one. Phases 1, 2, 4 and 5 have checks and expected results with no command. Where a
+lab tier can produce the command, it goes in; where none can, the row names the tier that could.
+
+### 4. `verify.sh` — phases 1, 2 and 3 only
+
+Read-only. Run once on a real machine, so that the expected output in the file is an output that
+was *seen*, including the unglamorous ones — *not enrolled* is a real expected output on an
+unenrolled machine, and is written as such. Phases 4, 5 and 6 get the Command column and no
+script: nothing in them can be run from one machine, and a script that was never run does not
+go in this repository.
+
+### 5. The earlier remainder
 
 Per-product detail in the selection document; build instructions per lab tier; putting
 `EXPLAIN.md`'s verify question to an actual reader.

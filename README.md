@@ -1,36 +1,36 @@
 # macOS Endpoint Automation
 
-**From a sealed box to a machine someone can work on — every hop stated, every hop verified, and
-every hop honest about whether it was run or only specified.**
+**An endpoint-engineering playbook: the chain from a sealed box to a machine someone can work on,
+one runbook per phase, and the decisions in between — with every hop honest about whether it was
+run or only specified.**
 
-This is a **method repository**. It publishes the chain, the selection criteria, the lab
-specification and the acceptance rules in full. It publishes no fleet, no employer and no case
-study — see [DISCLOSURE.md](DISCLOSURE.md) for where that line sits and why.
+`SE-` is the project prefix of [The Scrappy Engineer](https://linkedin.com/in/vicenteliu), the
+author's channel; this is the first `SE-` project. It is written for two readers, in this order:
+**someone with five minutes who needs to know what the author has and has not actually done**, and
+**the author on the job**, where it is the frame a fleet is run from and tuned per environment. It
+publishes no fleet, no employer and no case study — [DISCLOSURE.md](DISCLOSURE.md) says where that
+line sits and why.
 
 ---
 
-## Start here
+## Where the author stands
 
-| If you are… | Read |
+Markers, not adjectives. The legend is [below](#honesty-markers); the test behind every line is
+*"walk me through a time you did this, in detail — would it hold?"*
+
+| | |
 |---|---|
-| deciding whether this is worth your time | the two paragraphs directly below |
-| building this | [the chain](docs/00-the-chain.md) → the written phases → [lab tiers](docs/02-lab-tiers.md) |
-| choosing a management product | [selection criteria](docs/01-mdm-selection.md) |
-| explaining it to someone who will never touch it | [EXPLAIN.md](EXPLAIN.md) |
-| checking what is and is not claimed here | [the markers](#honesty-markers), then [DISCLOSURE.md](DISCLOSURE.md) |
+| 🔨 | **Ownership record and zero-touch enrolment**, administered on a large enterprise Apple estate |
+| 🔨 | **Jamf Pro** — console and API, for inventory reads and policy dispatch; bounded to one region's testing and maintenance |
+| 🔨 | **Workspace ONE** — lifecycle end to end, including a BYOD programme and targeted application distribution |
+| 🔨 | **Key escrow** — a self-built store, keyed by serial, used to bring machines back |
+| 🔨 | **Munki + AutoPkg** — the pipeline stood up end to end *once*: one machine, one afternoon, two applications, no fleet |
+| ⛔ | **802.1X / EAP-TLS** — specified to three lab tiers, deliberately not run, reason stated per tier |
+| 🧭 | **Intune** and **Kandji** as selection-and-architecture only; **privacy pre-authorisation (TCC/PPPC)** mapped, not operated |
 
-### Why the markers exist, in one example
-
-A careful pass over the documentation of two packaging tools produced **three wrong version
-facts**: a release that had never shipped treated as stable, a feature attributed to the version
-that introduced it when the previous one already had it, and two sources read as contradicting
-each other when one date had been misread. **Anyone following those notes would have put a
-release candidate into production.**
-
-Running the same thing for one afternoon corrected all three, and surfaced a mechanism the
-documentation does not state at all ([phase 3](phases/3-software/)). **Doc-checked and run are
-different states.** Every claim here says which one it is — including the ones that say *not run,
-and here is why*.
+Everything above is stated at the depth the phases state it, and no deeper. The number behind
+*"large"* and the organisation behind *"a region"* are exactly the details
+[DISCLOSURE.md](DISCLOSURE.md) keeps out.
 
 ---
 
@@ -65,39 +65,34 @@ ownership record becomes an ordinary working machine that is simply not yours; a
 politely and forever for an application to close; a policy mechanism stops functioning at an OS
 version and the compliance posture changes without anyone changing anything.
 
+The spine, hop by hop and with what each one assumes of the last, is
+[docs/00-the-chain.md](docs/00-the-chain.md).
+
 ---
 
-## What is written
+## The runbooks
 
-Honest state, because it is the point rather than an apology.
+One per phase. Each has the same six sections — **prerequisites · the hops · how the phase
+fails · verification, one row per hop · one acceptance · an escape hatch** — because a phase is
+the boundary of acceptance and a hop is the unit that gets verified.
 
 | Phase | | State |
 |---|---|---|
 | **1 — [enrolment](phases/1-enrolment/)** | 🔨 | ✅ written — every failure in it is silent and looks like success |
 | **2 — [configuration](phases/2-configuration/)** | 🔨 bounded | ✅ written — its hop 2 states ⏰ **what is actually changing in 2026**, which is not what most pages say it is |
-| **3 — [software distribution](phases/3-software/)** | 🔨 lab | ✅ written — **the only phase with a run behind it** |
+| **3 — [software distribution](phases/3-software/)** | 🔨 lab | ✅ written — **the only phase with a run behind it**, and so the only one whose verification table already carries commands |
 | **4 — [network access](phases/4-network-access/)** | ⛔ | ✅ written — the worked example of *Specced-Not-Run*, with the reason stated **per tier** |
 | **5 — [identity](phases/5-identity-optional/)** *(optional)* | 🔨 / 🧭 | ✅ written — the trust-boundary hop closes phase 4's loop from the other side |
 | **6 — [operations](phases/6-operations/)** | 🔨 | ✅ written — severity as a lived scheme, and tiering when the users out-technicalise the support team |
 
-A heading with no body means **not yet done**, not forgotten. What comes next and the reasoning
-for that order is in [TODO.md](TODO.md).
-
 **There is no phase 0.** It was in the original outline as *ground* — tier selection, product
 selection, administrator workstation — and every one of those found a better home: the first two
 are [docs/02](docs/02-lab-tiers.md) and [docs/01](docs/01-mdm-selection.md), and the third is
-per-phase **Prerequisites**, because what the admin machine needs differs by phase. An empty
-directory implying content is coming, when nothing is missing, is the same false signal as an
-under-claimed marker.
+per-phase **Prerequisites**, because what the admin machine needs differs by phase.
 
-✅ **All six phases are written.** Phase 5 stays labelled *optional* — the chain reaches a usable
-machine without it — and its marker is split rather than single: identity as a discipline is
-hands-on, the macOS-side attachment specifically is a ramp, and the phase says which is which
-rather than averaging them into one symbol.
-
-What remains is depth rather than coverage: per-product detail in the selection document, build
-instructions per lab tier, and putting [EXPLAIN.md](EXPLAIN.md)'s verify question to a real reader.
-[TODO.md](TODO.md) has the order.
+**Inheriting a fleet you did not build?** The page for that — the verification rows above,
+re-ordered into the sequence you run them in on arrival, each with what you decide from the
+answer — is the next thing written. [TODO.md](TODO.md) has the order and the reason.
 
 ---
 
@@ -116,6 +111,22 @@ The test, unchanged: *if an interviewer said "walk me through a time you did thi
 would it hold?* A 🔨 with nothing behind it is the overclaim these markers exist to make
 impossible — and an under-claim is the same defect pointing the other way.
 
+### Why the markers exist, in one example
+
+A careful pass over the documentation of two packaging tools produced **three wrong version
+facts**: a release that had never shipped treated as stable, a feature attributed to the version
+that introduced it when the previous one already had it, and two sources read as contradicting
+each other when one date had been misread. **Anyone following those notes would have put a
+release candidate into production.**
+
+Running the same thing for one afternoon corrected all three, and surfaced a mechanism the
+documentation does not state at all ([phase 3](phases/3-software/)). **Doc-checked and run are
+different states.** Every claim here says which one it is — including the ones that say *not run,
+and here is why*.
+
+The same rule bounds the code: a command appears wherever a lab tier can produce it, and a
+script appears only where one was actually run.
+
 ---
 
 ## Layout
@@ -126,9 +137,10 @@ impossible — and an under-claim is the same defect pointing the other way.
 | [`docs/01-mdm-selection.md`](docs/01-mdm-selection.md) | Jamf Pro, Workspace ONE, Intune, Kandji — the three questions that actually decide it, and the disclosure below |
 | [`docs/02-lab-tiers.md`](docs/02-lab-tiers.md) | Three environment tiers, defined by **the hop each one cannot verify** |
 | [`docs/adr/`](docs/adr/) | Decisions that would otherwise look arbitrary |
-| [`phases/`](phases/) | Prerequisites · steps · verification · acceptance · escape hatch, per phase |
+| [`phases/`](phases/) | One runbook per phase — prerequisites · hops · how it fails · verification · acceptance · escape hatch |
 | [`EXPLAIN.md`](EXPLAIN.md) | The same chain with zero jargon — and a stated test for whether it worked |
 | [`DISCLOSURE.md`](DISCLOSURE.md) | What this repository deliberately does not contain |
+| [`CONTEXT.md`](CONTEXT.md) | The words this repository uses, and what each is chosen against |
 | [`TODO.md`](TODO.md) | What gets written next, and why in that order |
 
 ---
