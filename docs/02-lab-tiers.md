@@ -7,9 +7,9 @@ it **cannot** verify, stated up front.
 
 | Tier | What it is | Verifies through | **Stops at** |
 |---|---|---|---|
-| **Minimum** | One Mac, local virtualisation | Profile authoring and inspection · packaging automation end to end · client-pull distribution including an unattended in-place upgrade | No MDM push · no ownership-record handoff · no certificate delivery · no 802.1X |
-| **Mid** | + an isolated network segment, a managed switch or AP, a local certificate authority | Certificate issuance · profile-carried credential delivery · the shape of an authentication failure | **No EAP-TLS association without the network hardware** — and a machine that cannot authenticate cannot reach the software repository, so this tier cannot distinguish hop 6 failing from hop 7 failing |
-| **Full** | + an organisational device-ownership record and an MDM with an enrolment token | The whole chain, from power on | Cost, and a multi-week organisational verification that cannot be shortened |
+| **Minimum** | One machine, no additional hardware | Profile authoring and inspection · packaging automation end to end · client-pull distribution including an unattended in-place upgrade · a local certificate authority issuing an identity, and a profile that references it correctly | No management server, so **no delivery** and no ownership-record handoff · no authenticator and no authentication server, so **no association** — a credential can be shown to exist and be correctly referenced, never to be accepted |
+| **Mid** | + a RADIUS server and 802.1X-capable hardware, on an isolated segment | The full EAP-TLS association · trust-anchor pinning actually rejecting a wrong issuer · the unbound-identity prompt · an expired certificate reproducing the deadlock | Everything is issued and installed **by hand**. Nothing here proves the automation: enrolment at scale, renewal before expiry, or an unreachable enrolment endpoint |
+| **Full** | + a management server with an enrolment connector, an organisational ownership record, and a real issuing CA | The whole chain from power on, with nobody present | Nothing in the chain. The limit becomes cost, a multi-week organisational verification, and the burden of running a CA whose failure takes the estate off the network |
 
 ## Where this design currently sits
 
