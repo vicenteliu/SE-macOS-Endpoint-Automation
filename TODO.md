@@ -106,14 +106,22 @@ ready the same day the first phases were written. Written 2026-09-05.
 - [x] Hop 3 — explaining it → `EXPLAIN.md`
 - [x] Escape Hatch
 
-## 6. Phase 5 — identity, optional — **the only phase left**
+## 6. ✅ Phase 5 — identity, optional — **written 2026-09-05**
 
-⛔ **The one that genuinely has nothing behind it.** A ramp, and the chain it belongs to names no
-identity provider as a requirement. Writing it from documentation alone would make this a summary
-of other people's pages — the one thing the marker system exists to prevent. It stays a skeleton
-until that changes.
+🔴 **Third correction, same shape as the other two.** This entry said phase 5 *"genuinely has
+nothing behind it."* Wrong again, and wrong the same way: **identity as a discipline is hands-on** —
+a directory built and run, schema extended, replication configured, and LDAPS terminated against
+two certificate authorities for a stated reason. **What is a ramp is the macOS-side attachment
+specifically.** Averaging those into one 🧭 was the under-claim; the phase now splits the marker.
 
-## Also later
+🥇 Its trust-boundary hop turned out to be the piece that closes phase 4's loop: *you cannot push a
+private root onto a device you do not manage* is the same sentence phase 4 relies on with the sign
+flipped. Neither phase was written with the other in mind, which is how it was found.
+
+📌 **The pattern worth keeping**: all three corrections came from being asked why something was
+missing. None came from reviewing the file. This record does not find its own errors.
+
+## What actually remains — depth, not coverage
 
 Per-product detail in the selection document; build instructions per lab tier; putting
 `EXPLAIN.md`'s verify question to an actual reader.

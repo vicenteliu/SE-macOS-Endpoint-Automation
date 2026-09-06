@@ -77,7 +77,7 @@ Honest state, because it is the point rather than an apology.
 | **2 — [configuration](phases/2-configuration/)** | 🔨 bounded | ✅ written — its hop 2 states ⏰ **what is actually changing in 2026**, which is not what most pages say it is |
 | **3 — [software distribution](phases/3-software/)** | 🔨 lab | ✅ written — **the only phase with a run behind it** |
 | **4 — [network access](phases/4-network-access/)** | ⛔ | ✅ written — the worked example of *Specced-Not-Run*, with the reason stated **per tier** |
-| 5 — identity *(optional)* | 🧭 | skeleton — **the only one left**, and the only one with nothing worked behind it |
+| **5 — [identity](phases/5-identity-optional/)** *(optional)* | 🔨 / 🧭 | ✅ written — the trust-boundary hop closes phase 4's loop from the other side |
 | **6 — [operations](phases/6-operations/)** | 🔨 | ✅ written — severity as a lived scheme, and tiering when the users out-technicalise the support team |
 
 A heading with no body means **not yet done**, not forgotten. What comes next and the reasoning
@@ -90,9 +90,14 @@ per-phase **Prerequisites**, because what the admin machine needs differs by pha
 directory implying content is coming, when nothing is missing, is the same false signal as an
 under-claimed marker.
 
-⛔ **Phase 5 is the only one left, and it is the only one that should be.** It is a genuine ramp,
-and the chain names no identity provider as a requirement. Writing it from documentation alone
-would make this a summary of other people's pages — the one thing the markers exist to prevent.
+✅ **All six phases are written.** Phase 5 stays labelled *optional* — the chain reaches a usable
+machine without it — and its marker is split rather than single: identity as a discipline is
+hands-on, the macOS-side attachment specifically is a ramp, and the phase says which is which
+rather than averaging them into one symbol.
+
+What remains is depth rather than coverage: per-product detail in the selection document, build
+instructions per lab tier, and putting [EXPLAIN.md](EXPLAIN.md)'s verify question to a real reader.
+[TODO.md](TODO.md) has the order.
 
 ---
 
