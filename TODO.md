@@ -82,10 +82,16 @@ demonstrate the method on the easiest possible case.
 has, the page is drafted rather than tested — and it is the one page here whose acceptance
 criterion cannot be met alone.
 
-## 5. ➡️ Phase 6 — operations *(next)*
+## 5. ✅ Phase 6 — operations — **written 2026-09-05**
 
-🔴 **Correction to what this file used to say.** It grouped phases 0, 5 and 6 as *"none of these
-has worked material behind it."* That was true of one of them.
+🔴 **Two corrections to what this file used to say**, both found by being asked why a phase was
+missing rather than by reviewing it.
+
+**It grouped phases 0, 5 and 6 as** *"none of these has worked material behind it."* That was true
+of one of them.
+
+🔴 **And phase 1 was never in this file at all.** Not a decision — an omission. Its material was
+ready the same day the first phases were written. Written 2026-09-05.
 
 - **Phase 0 is gone.** Not unwritten — *redundant*. Tier selection and product selection are
   already `docs/02` and `docs/01`, and administrator prerequisites belong per-phase because they
@@ -94,13 +100,13 @@ has worked material behind it."* That was true of one of them.
   done. Its first hop — queue ownership, severity as lived practice rather than vocabulary, what
   gets escalated and what gets kept — has real material behind it and is publishable as method.
 
-- [ ] Hop 1 — queue and escalation 🔨: severity as a lived scheme, tiering, and what a support
+- [x] Hop 1 — queue and escalation 🔨: severity as a lived scheme, tiering, and what a support
       organisation owes a population more technical than itself
-- [ ] Hop 2 — support tooling 🧭: a boundary line, stated as one
+- [x] Hop 2 — support tooling 🧭: a boundary line, stated as one
 - [x] Hop 3 — explaining it → `EXPLAIN.md`
-- [ ] Escape Hatch
+- [x] Escape Hatch
 
-## 6. Phase 5 — identity, optional
+## 6. Phase 5 — identity, optional — **the only phase left**
 
 ⛔ **The one that genuinely has nothing behind it.** A ramp, and the chain it belongs to names no
 identity provider as a requirement. Writing it from documentation alone would make this a summary
