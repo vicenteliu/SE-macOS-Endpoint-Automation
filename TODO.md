@@ -82,9 +82,32 @@ demonstrate the method on the easiest possible case.
 has, the page is drafted rather than tested — and it is the one page here whose acceptance
 criterion cannot be met alone.
 
-## Later — ➡️ **this is where the next work is**
+## 5. ➡️ Phase 6 — operations *(next)*
 
-Phases 0, 5 and 6; per-product detail in the selection document; build instructions per lab tier.
-None of these has worked material behind it yet, and writing them from documentation alone would
-make this a summary of other people's pages — which is the one thing the marker system exists to
-prevent.
+🔴 **Correction to what this file used to say.** It grouped phases 0, 5 and 6 as *"none of these
+has worked material behind it."* That was true of one of them.
+
+- **Phase 0 is gone.** Not unwritten — *redundant*. Tier selection and product selection are
+  already `docs/02` and `docs/01`, and administrator prerequisites belong per-phase because they
+  differ per phase. Removed rather than left as an empty directory implying content was coming.
+- **Phase 6 is more written than it was described as.** Its third hop *is* `EXPLAIN.md`, already
+  done. Its first hop — queue ownership, severity as lived practice rather than vocabulary, what
+  gets escalated and what gets kept — has real material behind it and is publishable as method.
+
+- [ ] Hop 1 — queue and escalation 🔨: severity as a lived scheme, tiering, and what a support
+      organisation owes a population more technical than itself
+- [ ] Hop 2 — support tooling 🧭: a boundary line, stated as one
+- [x] Hop 3 — explaining it → `EXPLAIN.md`
+- [ ] Escape Hatch
+
+## 6. Phase 5 — identity, optional
+
+⛔ **The one that genuinely has nothing behind it.** A ramp, and the chain it belongs to names no
+identity provider as a requirement. Writing it from documentation alone would make this a summary
+of other people's pages — the one thing the marker system exists to prevent. It stays a skeleton
+until that changes.
+
+## Also later
+
+Per-product detail in the selection document; build instructions per lab tier; putting
+`EXPLAIN.md`'s verify question to an actual reader.
