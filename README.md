@@ -56,7 +56,7 @@ green 🔨 · olive 🔨 bounded lab · red ⛔ Specced-Not-Run · grey optional
 | [`docs/01-mdm-selection.md`](docs/01-mdm-selection.md) | Choosing between Jamf Pro, Workspace ONE, Intune and Kandji — and the disclosure below |
 | [`docs/02-lab-tiers.md`](docs/02-lab-tiers.md) | Three environment tiers, and the exact hop each one **cannot** verify |
 | [`phases/`](phases/) | Phase by phase: prerequisites, steps, verification, acceptance |
-| [`EXPLAIN.md`](EXPLAIN.md) | The same chain, told to someone who will never touch it |
+| [`EXPLAIN.md`](EXPLAIN.md) | The same chain, told to someone who will never touch it — zero jargon, and a stated test for whether it worked |
 | [`DISCLOSURE.md`](DISCLOSURE.md) | What this repository deliberately does not contain, and why |
 
 ## Disclosure

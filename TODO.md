@@ -66,19 +66,23 @@ history, and a page that says it early reads differently from one that says it l
 - [x] The identifier-collision failure and the locked-profile trade-off
 - [x] Escape Hatch
 
-## 4. EXPLAIN.md
+## 4. ✅ EXPLAIN.md — **written 2026-09-05**
 
-➡️ **Next up — and no longer blocked: phase 3 is written.** Originally blocked on 1: The translation needs a completed phase to translate, and phase 3 is the right
+Originally blocked on 1: The translation needs a completed phase to translate, and phase 3 is the right
 first subject because it is the one with a real run behind it. Translating a specification would
 demonstrate the method on the easiest possible case.
 
-- [ ] The one-sentence outcome
-- [ ] Per-phase table: who notices · what they cannot do · time to recover
-- [ ] What this does not solve
-- [ ] Verify it with the only question that matters: *what would you decide differently after
+- [x] The one-sentence outcome
+- [x] Per-phase table: who notices · what they cannot do · time to recover
+- [x] What this does not solve
+- [x] Verify it with the only question that matters: *what would you decide differently after
       reading this?* — "that was clear" is a failure, not a pass
 
-## Later
+📌 **Still owed on this one**: the verify question has not been put to an actual reader. Until it
+has, the page is drafted rather than tested — and it is the one page here whose acceptance
+criterion cannot be met alone.
+
+## Later — ➡️ **this is where the next work is**
 
 Phases 0, 5 and 6; per-product detail in the selection document; build instructions per lab tier.
 None of these has worked material behind it yet, and writing them from documentation alone would
