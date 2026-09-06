@@ -3,7 +3,7 @@
 Eight hops between a sealed box and a machine someone can work on. Each one is owned by a
 different mechanism, and each fails in its own way.
 
-🚧 *Structure settled. Per-hop detail lives in the phases; [3](../phases/3-software/), [4](../phases/4-network-access/) and [2](../phases/2-configuration/) are written.*
+*Per-hop detail lives in the phases; all six are written.*
 
 | # | Hop | Owned by | Marker | Phase |
 |---|---|---|---|---|
@@ -16,6 +16,18 @@ different mechanism, and each fails in its own way.
 | 6 | Credential → network | 802.1X, EAP-TLS | ⛔ | [4](../phases/4-network-access/) |
 | 7 | Network → software | Client-pull distribution + packaging automation | 🔨 lab | [3](../phases/3-software/) |
 | 8 | Software → identity | Platform SSO *(optional extension)* | 🧭 | [5](../phases/5-identity-optional/) |
+
+## When the chain is accepted
+
+Per-phase acceptance is in each runbook. The chain as a whole is accepted on **one outcome**, and it
+is deliberately stricter than *"a device enrolled"*:
+
+> **A sealed box, powered on with nobody touching it, becomes a supervised, encrypted machine on
+> the authenticated network with its software installed — and a key for it comes back out of
+> escrow.**
+
+The last clause is the one that catches what nothing else reports: every hop can succeed and the
+estate still cannot recover the machine. [Phase 1](../phases/1-enrolment/)'s acceptance says why.
 
 ## Why the joints matter more than the links
 

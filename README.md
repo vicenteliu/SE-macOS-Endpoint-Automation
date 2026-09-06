@@ -1,15 +1,19 @@
 # macOS Endpoint Automation
 
-**An endpoint-engineering playbook: the chain from a sealed box to a machine someone can work on,
-one runbook per phase, and the decisions in between — with every hop honest about whether it was
-run or only specified.**
+**From a sealed box to a machine someone can work on. One runbook per phase, and every hop says
+whether it was run or only specified.**
 
 `SE-` is the project prefix of [The Scrappy Engineer](https://linkedin.com/in/vicenteliu), the
-author's channel; this is the first `SE-` project. It is written for two readers, in this order:
-**someone with five minutes who needs to know what the author has and has not actually done**, and
-**the author on the job**, where it is the frame a fleet is run from and tuned per environment. It
-publishes no fleet, no employer and no case study — [DISCLOSURE.md](DISCLOSURE.md) says where that
-line sits and why.
+author's channel; this is the first `SE-` project. It is a playbook — not a vendor tutorial, and
+not a case study. It publishes no fleet and no employer; [DISCLOSURE.md](DISCLOSURE.md) says where
+that line sits and why.
+
+| If you have… | Read |
+|---|---|
+| **five minutes** | the [footing table](#where-the-author-stands) below, then [the chain](#the-chain), then [phase 3](phases/3-software/) — the one page with a real run behind it |
+| **fifteen** | [the chain, hop by hop](docs/00-the-chain.md), then [phase 4](phases/4-network-access/) — the worked example of *specified, and deliberately not run* |
+| **a fleet to run** | the runbooks in order, [1](phases/1-enrolment/) → [6](phases/6-operations/); the page for a fleet you *inherited* is [next to be written](TODO.md) |
+| **someone to explain it to** | [EXPLAIN.md](EXPLAIN.md) — the same chain with zero jargon |
 
 ---
 
@@ -18,7 +22,7 @@ line sits and why.
 Markers, not adjectives. The legend is [below](#honesty-markers); the test behind every line is
 *"walk me through a time you did this, in detail — would it hold?"*
 
-| | |
+| Marker | Claim |
 |---|---|
 | 🔨 | **Ownership record and zero-touch enrolment**, administered on a large enterprise Apple estate |
 | 🔨 | **Jamf Pro** — console and API, for inventory reads and policy dispatch; bounded to one region's testing and maintenance |
@@ -65,6 +69,11 @@ ownership record becomes an ordinary working machine that is simply not yours; a
 politely and forever for an application to close; a policy mechanism stops functioning at an OS
 version and the compliance posture changes without anyone changing anything.
 
+**The chain is accepted on one outcome**, stricter than *a device enrolled*: a sealed box, powered
+on with nobody touching it, becomes a supervised, encrypted machine on the authenticated network
+with its software installed — **and a key for it comes back out of escrow.** The last clause is the
+one nothing else reports.
+
 The spine, hop by hop and with what each one assumes of the last, is
 [docs/00-the-chain.md](docs/00-the-chain.md).
 
@@ -85,10 +94,9 @@ the boundary of acceptance and a hop is the unit that gets verified.
 | **5 — [identity](phases/5-identity-optional/)** *(optional)* | 🔨 / 🧭 | ✅ written — the trust-boundary hop closes phase 4's loop from the other side |
 | **6 — [operations](phases/6-operations/)** | 🔨 | ✅ written — severity as a lived scheme, and tiering when the users out-technicalise the support team |
 
-**There is no phase 0.** It was in the original outline as *ground* — tier selection, product
-selection, administrator workstation — and every one of those found a better home: the first two
-are [docs/02](docs/02-lab-tiers.md) and [docs/01](docs/01-mdm-selection.md), and the third is
-per-phase **Prerequisites**, because what the admin machine needs differs by phase.
+*(No phase 0: tier and product selection are [docs/02](docs/02-lab-tiers.md) and
+[docs/01](docs/01-mdm-selection.md), and what the administrator's machine needs is a per-phase
+prerequisite because it differs by phase.)*
 
 **Inheriting a fleet you did not build?** The page for that — the verification rows above,
 re-ordered into the sequence you run them in on arrival, each with what you decide from the
@@ -131,6 +139,9 @@ script appears only where one was actually run.
 
 ## Layout
 
+<details>
+<summary>Every file, one line each</summary>
+
 | Path | What |
 |---|---|
 | [`docs/00-the-chain.md`](docs/00-the-chain.md) | The spine — every hop, and what the next one assumes about it |
@@ -142,6 +153,8 @@ script appears only where one was actually run.
 | [`DISCLOSURE.md`](DISCLOSURE.md) | What this repository deliberately does not contain |
 | [`CONTEXT.md`](CONTEXT.md) | The words this repository uses, and what each is chosen against |
 | [`TODO.md`](TODO.md) | What gets written next, and why in that order |
+
+</details>
 
 ---
 
