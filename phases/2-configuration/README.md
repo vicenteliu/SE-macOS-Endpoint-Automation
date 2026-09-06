@@ -6,9 +6,9 @@
 
 | # | Hop | Marker | What it answers |
 |---|---|---|---|
-| 1 | **Configuration profiles** | 🧭 | Payload structure, scope, signing, removability |
+| 1 | **Configuration profiles** | 🔨 bounded | Payload structure, scope, signing, removability — from inside the file, not only the console |
 | 2 | **Declarative management** | 🧭 | Why the model moved from command-push, and what that changes operationally |
-| 3 | **Privacy pre-authorisation** | 🧭 | Why an automated tool must be granted access before it asks, and what the user still sees |
+| 3 | **Privacy pre-authorisation** | 🧭 | Why an automated tool must be granted access before it asks, and what the user still sees. 🚧 *Stays a ramp: the profile work in row 1 does not extend to TCC/PPPC* |
 | 4 | **Scoping** | 🔨 bounded | Dynamic grouping and device-reported attributes — and why scope drift is the failure mode nobody instruments |
 
 ## Prerequisites

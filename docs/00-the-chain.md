@@ -10,7 +10,8 @@ different mechanism, and each fails in its own way.
 | 1 | Power on → Setup Assistant reaches out | Apple, the device's ownership record | 🔨 | [1](../phases/1-enrolment/) |
 | 2 | Ownership record → enrolment profile | ABM/ASM ↔ MDM pairing | 🔨 | [1](../phases/1-enrolment/) |
 | 3 | Enrolment → supervision and trust | MDM, bootstrap token | 🔨 partial | [1](../phases/1-enrolment/) |
-| 4 | Trust → configuration | Configuration profiles, TCC/PPPC | 🧭 | [2](../phases/2-configuration/) |
+| 4a | Trust → configuration | Configuration profiles | 🔨 bounded | [2](../phases/2-configuration/) |
+| 4b | Configuration → privacy consent | TCC / PPPC | 🧭 | [2](../phases/2-configuration/) |
 | 5 | Configuration → credential | SCEP / ACME carried by a profile | ⛔ | [4](../phases/4-network-access/) |
 | 6 | Credential → network | 802.1X, EAP-TLS | ⛔ | [4](../phases/4-network-access/) |
 | 7 | Network → software | Client-pull distribution + packaging automation | 🔨 lab | [3](../phases/3-software/) |
