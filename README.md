@@ -78,6 +78,7 @@ compared here.
 acceptance rules are settled. Sections are filled in as each is actually worked through —
 a heading with no body means not yet done, not forgotten.
 
-**Written so far:** [phase 3 — software distribution](phases/3-software/) 🔨, the only phase with a
-run behind it, and [phase 4 — network access](phases/4-network-access/) ⛔, the worked example of
-Specced-Not-Run. What comes next and why is in [TODO.md](TODO.md).
+**Written so far:** [phase 2 — configuration](phases/2-configuration/), [phase 3 — software
+distribution](phases/3-software/) 🔨 (the only phase with a run behind it), and [phase 4 — network
+access](phases/4-network-access/) ⛔ (the worked example of Specced-Not-Run). What comes next and
+why is in [TODO.md](TODO.md).

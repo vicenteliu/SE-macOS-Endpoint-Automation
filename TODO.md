@@ -50,9 +50,9 @@ exact hop each lab tier cannot prove.
 - [x] Escape Hatch — what happens to a machine that cannot authenticate is a business decision,
       not a networking one
 
-## 3. Phase 2 — the currency pass ⏰
+## 3. ✅ Phase 2 — the currency pass ⏰ — **written 2026-09-05, while it was still imminent**
 
-➡️ **Next up.** Why it is time-sensitive: the accurate 2026 statement is that configuration profiles are
+Why it was time-sensitive: the accurate 2026 statement is that configuration profiles are
 **not deprecated — they are being subsumed**. Declarative management is the delivery and
 enforcement model, and from OS 27.0 a legacy profile can be carried as a declarative asset. What
 genuinely stops functioning at 27.0 is *legacy software update management* — the commands,
@@ -61,14 +61,14 @@ queries, cadence settings and deferrals.
 ⏰ **This is worth most while it is still imminent.** Once 27.0 ships it becomes ordinary
 history, and a page that says it early reads differently from one that says it late.
 
-- [ ] Fold the above into the configuration phase and the chain
-- [ ] Payload structure, identifiers, signing, removability, device vs user scope
-- [ ] The identifier-collision failure and the locked-profile trade-off
-- [ ] Escape Hatch
+- [x] Fold the above into the configuration phase and the chain
+- [x] Payload structure, identifiers, signing, removability, device vs user scope
+- [x] The identifier-collision failure and the locked-profile trade-off
+- [x] Escape Hatch
 
 ## 4. EXPLAIN.md
 
-**Blocked on 1.** The translation needs a completed phase to translate, and phase 3 is the right
+➡️ **Next up — and no longer blocked: phase 3 is written.** Originally blocked on 1: The translation needs a completed phase to translate, and phase 3 is the right
 first subject because it is the one with a real run behind it. Translating a specification would
 demonstrate the method on the easiest possible case.
 

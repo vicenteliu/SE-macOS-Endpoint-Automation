@@ -3,7 +3,7 @@
 Eight hops between a sealed box and a machine someone can work on. Each one is owned by a
 different mechanism, and each fails in its own way.
 
-🚧 *Structure settled. Per-hop detail fills in as each is worked through.*
+🚧 *Structure settled. Per-hop detail lives in the phases; [3](../phases/3-software/), [4](../phases/4-network-access/) and [2](../phases/2-configuration/) are written.*
 
 | # | Hop | Owned by | Marker | Phase |
 |---|---|---|---|---|
@@ -30,6 +30,19 @@ assumes about the previous one — and that is where a zero-touch build actually
 
 **Ordering is therefore part of the design, not an implementation detail.** Each phase
 states what must already be true before it runs.
+
+## ⏰ One thing about this chain is moving, as of 2026-09
+
+Hop 4a is drawn as *configuration profiles* because that is still the payload format. **The
+delivery and enforcement model underneath it is being replaced.** Declarative management is the
+direction; from OS 27.0 a legacy profile is carried as a declarative asset rather than installed
+by a command, and **legacy software update management stops functioning entirely** — commands,
+queries, cadence settings and deferrals.
+
+⛔ **The common 2026 statement is that profiles are deprecated. That is wrong**, and it is wrong in
+a way that is easy to check. Profiles are not being removed; they are being subsumed. The
+difference matters because it changes what you migrate: not the payloads, the mechanism that
+delivers them. See [phase 2](../phases/2-configuration/).
 
 ## The constraint that shapes all of it
 
