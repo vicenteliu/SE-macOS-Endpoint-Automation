@@ -4,9 +4,20 @@
 whether it was run or only specified.**
 
 `SE-` is the project prefix of [The Scrappy Engineer](https://linkedin.com/in/vicenteliu), the
-author's channel; this is the first `SE-` project. It is a playbook — not a vendor tutorial, and
+author's channel; this was the first `SE-` project. It is a playbook — not a vendor tutorial, and
 not a case study. It publishes no fleet and no employer; [DISCLOSURE.md](DISCLOSURE.md) says where
 that line sits and why.
+
+## Why this exists
+
+It was written against the requirements of **one role in the macOS endpoint lane**, before the
+conversation about that role, as the honest form of *"how would you approach this here"*: the
+whole chain specified end to end, **run wherever the author could run it and marked wherever he
+could not**. It is not a promise of a fast start — a playbook built from a job description knows
+nothing about the environment it would land in, and day one anywhere is wiring it to that
+environment. It continues regardless of how that conversation ends, and it is the template for the
+next `SE-` playbook in another lane: one repository per job family, the company-specific layer
+kept private.
 
 | If you have… | Read |
 |---|---|
@@ -171,6 +182,10 @@ selection framework. It also does not implement the Apple MDM protocol, so it is
 alternative to anything compared here.
 
 ---
+
+**Other `SE-` projects**: [`SE-Job-Search-Workbench`](https://github.com/vicenteliu/SE-Job-Search-Workbench)
+— the method the author prepares his own interviews with, published in full, which is also where
+the honesty markers on this page come from.
 
 <sub>MIT. Written in the open; corrections against the vendor documentation are welcome and the
 version-dated claims are the ones most likely to need them.</sub>
