@@ -23,7 +23,8 @@ kept private.
 |---|---|
 | **five minutes** | the [footing table](#where-the-author-stands) below, then [the chain](#the-chain), then [phase 3](phases/3-software/) — the one page with a real run behind it |
 | **fifteen** | [the chain, hop by hop](docs/00-the-chain.md), then [phase 4](phases/4-network-access/) — the worked example of *specified, and deliberately not run* |
-| **a fleet to run** | the runbooks in order, [1](phases/1-enrolment/) → [6](phases/6-operations/); the page for a fleet you *inherited* is [next to be written](TODO.md) |
+| **a fleet to run** | the runbooks in order, [1](phases/1-enrolment/) → [6](phases/6-operations/) |
+| **a fleet you inherited** | [docs/03](docs/03-inheriting-a-fleet.md) — the same verification rows, in the order you run them on arrival, each with what you decide from the answer |
 | **someone to explain it to** | [EXPLAIN.md](EXPLAIN.md) — the same chain with zero jargon |
 
 ---
@@ -158,6 +159,7 @@ script appears only where one was actually run.
 | [`docs/00-the-chain.md`](docs/00-the-chain.md) | The spine — every hop, and what the next one assumes about it |
 | [`docs/01-mdm-selection.md`](docs/01-mdm-selection.md) | Jamf Pro, Workspace ONE, Intune, Kandji — the three questions that actually decide it, and the disclosure below |
 | [`docs/02-lab-tiers.md`](docs/02-lab-tiers.md) | Three environment tiers, defined by **the hop each one cannot verify** |
+| [`docs/03-inheriting-a-fleet.md`](docs/03-inheriting-a-fleet.md) | The verification rows in the order you run them on a fleet you did not build, each with the decision the answer forces |
 | [`docs/adr/`](docs/adr/) | Decisions that would otherwise look arbitrary |
 | [`phases/`](phases/) | One runbook per phase — prerequisites · hops · how it fails · verification · acceptance · escape hatch |
 | [`EXPLAIN.md`](EXPLAIN.md) | The same chain with zero jargon — and a stated test for whether it worked |

@@ -129,7 +129,7 @@ missing now is not depth in any one phase; it is the two things that turn a *des
 into something you can run a fleet from: **an entry point for someone who has just inherited
 one, and commands where there are only checks.**
 
-### 1. `docs/03-inheriting-a-fleet.md`
+### 1. ✅ `docs/03-inheriting-a-fleet.md` — **written 2026-09-09**
 
 The verification rows already written in the six phases, re-ordered into the sequence you
 actually run them in when you arrive at an estate you did not build — reconcile the ownership
@@ -139,6 +139,17 @@ record first, find out *how* things enrolled second, take a key out of escrow th
 Why first: it is the page that makes this repository a playbook rather than a description of a
 chain, and it is the cheapest page here — nothing in it is new, only the order and the decision
 column.
+
+- [x] Twenty rows across day one · week one (configuration, network, software, identity) · week
+      two (operations), each with *the answer looks like* and *what you decide from it*
+- [x] Three rules before the first command — read before you change; ordered by cost of being
+      wrong, not by the chain; "I don't know" goes in the table
+- [x] Its own acceptance: every hop answerable from something read rather than something told,
+      and the first change is the one whose answer surprised you
+- [x] De-identification pass green on all four axes; no employer, no fleet, no number
+
+📌 The read-only commands on rows 2, 4 and 5 are ones the Minimum tier can run; the rest of the
+rows carry the check as the phase states it, which is item 3's job to turn into commands.
 
 ### 2. Phase 3 — the lab's own files
 
