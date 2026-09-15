@@ -30,12 +30,12 @@ Anthropic, OpenAI, or any OpenAI-compatible local endpoint (Ollama on `:11434/v1
 ## What the file contains, in this order
 
 ```
-# Run — row 3.2 · ollama:ornith-1.5:9b@mac-studio · 2026-09-22
+# Run — row 3.2 · ollama:ornith-1.5:9b@lab-host · 2026-09-22
 
 Path: cli | api
 Command: <the exact command line, keys redacted as $VAR>
 Model: <exact identifier the endpoint reported back, not the one requested>
-Host: mac-studio (Mac Studio, 64 GB) | api.anthropic.com | api.openai.com
+Host: lab-host (the minimum tier, never the machine's own name; `AGENT_RUN_HOST` sets the label) | api.anthropic.com | api.openai.com
 Started / finished: <ISO timestamps>   Wall: <s>   Tokens: <in/out if reported>   Cost: <if hosted>
 
 ## Task
