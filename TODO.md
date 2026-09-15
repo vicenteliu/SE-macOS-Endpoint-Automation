@@ -195,11 +195,20 @@ anything a reader can check.
       the bare API against Ollama, so the local line for 3.3 measures the model and not the CLI.
       Until then the local line says what it measured
 
-### 2b. A ledger row from docs/03  ← **hop 3**
+### 2b. ✅ A ledger row from docs/03 — row I.1  ← **hop 3, done 2026-09-15**
 
-Row I.1 (reconcile the estate against the ownership record) or I.4 (installed profiles against
-what was sent): the page a hiring reader opens first, so the first place the boundary should be
-visible with a date on it. Same three models, same record.
+Row I.1 (reconcile the estate against the ownership record): the page a hiring reader opens
+first, so the first place the boundary should be visible with a date on it. Same three models,
+same record.
+
+- [x] The minimum tier has no management server and no ownership program, so the row ran on
+      two synthetic exports — equal totals hiding a 2 + 2 mismatch, one trailing-space serial,
+      one silent device and an OS split as bait; `lab/agent/docs03-rowI.1/`
+- [x] Empty working directory per model (the row-3.3 lesson); `diff -r` against the fixture
+      afterwards; all three models left the files untouched
+- [x] `claude-opus-5` PASS (60 s) · `gpt-6-astra` PASS (38 s) — the first row where all three ran
+      the same task under a comparable permission model · `ornith-1.5:9b` PARTIAL (26 min): right
+      lists, wrong counts in the summary
 
 ### 3. A **Command** column in every Verification table  ← **hops 4 onward, one row each**
 

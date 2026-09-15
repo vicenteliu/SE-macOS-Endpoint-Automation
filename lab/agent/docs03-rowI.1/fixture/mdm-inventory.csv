@@ -1,0 +1,13 @@
+serial_number,device_name,enrollment_type,supervised,last_check_in,os_version
+LAB03MYLK3WY,lab-mac-03,automated,true,2026-09-13T03:23:00Z,26.5
+LAB047YWR18H,lab-mac-04,automated,true,2026-09-14T04:24:00Z,26.6.2
+LAB05L1H8XR4,lab-mac-05,automated,true,2026-09-10T05:25:00Z,26.6.2
+LAB06C25FJ5Z,lab-mac-06,automated,true,2026-09-11T06:20:00Z,26.5
+LAB07DN5C78M ,lab-mac-07,automated,true,2026-09-12T07:21:00Z,26.6.2
+LAB08W049R36,lab-mac-08,automated,true,2026-09-13T08:22:00Z,26.6.2
+LAB09TR46ZVH,lab-mac-09,automated,true,2026-02-03T09:14:00Z,26.5
+LAB109QGDHWK,lab-mac-10,automated,true,2026-09-10T01:24:00Z,26.6.2
+LAB11M2T518N,lab-mac-11,automated,true,2026-09-11T02:25:00Z,26.6.2
+LAB12TX7RZQY,lab-mac-12,automated,true,2026-09-12T03:20:00Z,26.5
+LAB13ZTZL9P2,lab-mac-13,user-approved,false,2026-09-13T04:21:00Z,26.6.2
+LAB14C8M023J,lab-mac-14,user-approved,false,2026-09-14T05:22:00Z,26.6.2

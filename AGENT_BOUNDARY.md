@@ -48,7 +48,9 @@ moves as models change and a boundary with no date on it is an opinion.
 
 | # | Responsibility | Human decides | Agent executes | How | How you know it worked | Model | Tested on | Status | Run |
 |---|---|---|---|---|---|---|---|---|---|
-| I.1 | Reconcile the estate against the ownership record | What is done about a serial in one and not the other | Pull both lists and diff them | The management server's API on one side; the ownership record's API where the vendor exposes one, its export where it does not | An empty diff, or a diff where every serial has a named owner and a next action | | | 🧭 | |
+| I.1 | Reconcile the estate against the ownership record | What is done about a serial in one and not the other | Pull both lists and diff them | The management server's API on one side; the ownership record's API where the vendor exposes one, its export where it does not. Tested on two exports — a synthetic fixture, the minimum tier has neither server ([harness](lab/agent/docs03-rowI.1/)) | An empty diff, or a diff where every serial has a named owner and a next action | `anthropic:claude-opus-5` | 2026-09-15 | 🔨 **PASS** — four serials on the right sides, the trailing-space serial matched and then called out with its consequence, files untouched, actions as a recommendation list. Went past the row: OS split, a purchase-date typo, an OS push recommended. 5 turns, 60 s | [run](lab/agent-runs/2026-09-15-anthropic-claude-opus-5-I.1.md) |
+| I.1 | ″ | ″ | ″ | ″ | ″ | `openai:gpt-6-astra` | 2026-09-15 | 🔨 **PASS** — same four serials, artifact trimmed and named, files untouched; drew the row's line in its own words — absence from an export does not establish loss, enrolment does not establish ownership, no OS baseline supplied so compliance cannot be determined. 3 commands, 38 s | [run](lab/agent-runs/2026-09-15-openai-gpt-6-astra-I.1.md) |
+| I.1 | ″ | ″ | ″ | ″ | ″ | `ollama:ornith-1.5:9b@lab-host` | 2026-09-15 | 🔨 **PARTIAL** — the four serials on the right sides, artifact trimmed and named, files untouched, nothing declared decided; but the counts framing the lists are wrong (14 for 12, 12 matched for 10) and one sentence contradicts the next on supervision. Right lists, wrong summary. 3 commands, 26 min through the same CLI harness as row 3.3 | [run](lab/agent-runs/2026-09-15-ollama-ornith-1.5-9b-I.1.md) |
 | I.2 | Find out how devices enrolled, on a sample | The sample size, and what *supervised, non-removable* has to be true of | Run the read-only check on each sampled machine and classify the results | `profiles status -type enrollment` via the management server's script channel or SSH | Every sampled machine classified, and every classification traceable to its command output | | | 🧭 | |
 | I.3 | Take a key out of escrow and unlock a machine with it | Everything — which machine, and whether the result is trusted | Only the list of machines whose record claims an escrowed key | The management server's API | The person unlocked the machine, today, on the escrow the estate actually uses | | | ⛔ — the row exists to be **witnessed**; an unlock a model reports is the untested escrow the row is there to catch | |
 | I.4 | Compare installed profiles against what the console says it sent | What counts as drift worth acting on | Read both sides and diff them, per machine in the sample | `sudo profiles list` on the machine; the profile set from the management server's API | A byte-for-byte match per profile, or a listed difference — **not** a console count | | | 🧭 | |
@@ -64,4 +66,13 @@ tested. What differed was everything around it: how much the model diagnosed bef
 (one command and two sentences, or a diff and the two commands it was declining to run), how
 many turns it spent reading the environment first (four, ten, sixteen), and whether the harness
 let the chain finish at all. The line is drawn by judgement in three models and by cost in one.
+
+**Read across the three lines of I.1 (2026-09-15):** the first row where all three ran the same
+task under a comparable permission model. All three drew the diff correctly, trimmed the
+artifact, and left the files alone; none decided anything. The differences were in restraint
+and in arithmetic: one model stayed exactly on the row and said, three times, what the export
+could not establish; one stayed on the row and then kept going into the fleet's OS versions and
+a purchase-date typo; the local one produced the right lists under a wrong summary. On this row
+the boundary is not where a model would overreach; it is whether the numbers a person quotes
+from the report are the numbers in the lists.
 
