@@ -1,0 +1,12 @@
+2026-09-04 17:10:38.352-07:00 ### Starting managedsoftwareupdate run: custom ###
+2026-09-04 17:10:38.353-07:00 Starting...
+2026-09-04 17:10:38.357-07:00 ### Beginning managed installer session ###
+2026-09-04 17:10:38.357-07:00 Preventing idle sleep
+2026-09-04 17:10:38.358-07:00 Processing installs
+2026-09-04 17:10:38.359-07:00 Checking if Firefox.app is running...
+2026-09-04 17:10:38.372-07:00 Blocking apps for Firefox are running:
+2026-09-04 17:10:38.373-07:00     ["Firefox.app"]
+2026-09-04 17:10:38.373-07:00 Skipping install of Firefox because blocking applications are running.
+2026-09-04 17:10:38.373-07:00 Checking if Cyberduck.app is running...
+2026-09-04 17:10:38.389-07:00 Installing Cyberduck (2 of 2)
+2026-09-04 17:10:38.389-07:00     Mounting disk image Cyberduck-9.5.4.dmg

@@ -159,12 +159,18 @@ rows carry the check as the phase states it, which is item 3's job to turn into 
 > ledger itself, the audit, the rules and the lab scaffolding were set up in one pass
 > (ADR-0002) and are not hops.
 
-### 2. Phase 3 — the lab's own files  ← **hop 1**
+### 2. ✅ Phase 3 — the lab's own files  ← **hop 1, done 2026-09-15**
 
 The two packaging-automation overrides, the generated item metadata, and the manifest, under
 `phases/3-software/lab/`, labelled with the boundary they carry: *as run — one machine, one
 afternoon, two applications, no fleet.* The only phase with a run behind it is the only phase
 allowed to ship files.
+
+- [x] Nine files copied out of the repository and the override directory after the run, plus
+      the two log excerpts; one field edited (`created_by` → `lab-user`) and the README says so
+- [x] The README is the first section written to the ADR-0002 shape — *Before you start ·
+      Permissions · Minimum test · Verify · Rollback*
+- [x] Verify table maps every runbook row to the file that shows it
 
 ### 2a. The first 🔨 ledger row — phase 3, row 3.2 or 3.3  ← **hop 2**
 

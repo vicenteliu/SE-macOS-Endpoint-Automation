@@ -109,7 +109,9 @@ type has the client repair ownership and permissions afterwards.
 
 ## Verification
 
-Per hop, the command and the expected output.
+Per hop, the command and the expected output. The files these rows were produced from — the two
+overrides, the generated item metadata, the manifest, the catalog, the client log lines — are in
+[`lab/`](lab/), as run.
 
 | | Command | Expect |
 |---|---|---|
