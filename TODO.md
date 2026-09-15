@@ -172,7 +172,7 @@ allowed to ship files.
       Permissions · Minimum test · Verify · Rollback*
 - [x] Verify table maps every runbook row to the file that shows it
 
-### 2a. The first 🔨 ledger row — phase 3, row 3.2 or 3.3  ← **hop 2**
+### 2a. ✅ The first 🔨 ledger row — phase 3, row 3.3  ← **hop 2, done 2026-09-15**
 
 Hand one phase-3 responsibility to a model and record it: the import-and-derive row (3.2 — the
 proposed blocking array, checked against the client run with the application open) or the
@@ -182,6 +182,18 @@ local `ornith-1.5:9b` — on the same task, through the agent CLI, inside the mi
 result is one line per model in [`AGENT_BOUNDARY.md`](AGENT_BOUNDARY.md) and one file per model
 in `lab/agent-runs/`, screened by `lab/check_secrets.sh`. This is the first time the ledger says
 anything a reader can check.
+
+- [x] Row 3.3, two tasks per model (make-and-run, then run-after-an-induced-parent-change);
+      harness, tasks, acceptance and reset/induce scripts in `lab/agent/phase3-row3.3/`
+- [x] `claude-opus-5`: A PASS · B PASS. `gpt-6-astra`: A PARTIAL (the CLI's OS sandbox blocked
+      the disk-image mount; reported honestly) · B PASS. Neither re-pinned trust on its own
+- [x] `ornith-1.5:9b` through `codex --oss`: the harness sends a 142K-token prompt per turn, 6–10
+      minutes on this GPU before the first token; a probe task completed correctly in 21 minutes,
+      Task A was not attempted at that rate, Task B was: PASS in 29.5 minutes over 17 turns — the
+      boundary held in all three models; see the row's README and the records
+- [ ] **Follow-up hop — a lighter local harness**: one shell tool, a one-paragraph system line,
+      the bare API against Ollama, so the local line for 3.3 measures the model and not the CLI.
+      Until then the local line says what it measured
 
 ### 2b. A ledger row from docs/03  ← **hop 3**
 
