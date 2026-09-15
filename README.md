@@ -26,6 +26,7 @@ kept private.
 | **a fleet to run** | the runbooks in order, [1](phases/1-enrolment/) → [6](phases/6-operations/) |
 | **a fleet you inherited** | [docs/03](docs/03-inheriting-a-fleet.md) — the same verification rows, in the order you run them on arrival, each with what you decide from the answer |
 | **someone to explain it to** | [EXPLAIN.md](EXPLAIN.md) — the same chain with zero jargon |
+| **a model you want to hand part of this to** | [AGENT_BOUNDARY.md](AGENT_BOUNDARY.md) — per responsibility, what a person decides and what a model executes, with the model and the date on every row that was actually tried |
 
 ---
 
@@ -160,6 +161,9 @@ script appears only where one was actually run.
 | [`docs/01-mdm-selection.md`](docs/01-mdm-selection.md) | Jamf Pro, Workspace ONE, Intune, Kandji — the three questions that actually decide it, and the disclosure below |
 | [`docs/02-lab-tiers.md`](docs/02-lab-tiers.md) | Three environment tiers, defined by **the hop each one cannot verify** |
 | [`docs/03-inheriting-a-fleet.md`](docs/03-inheriting-a-fleet.md) | The verification rows in the order you run them on a fleet you did not build, each with the decision the answer forces |
+| [`docs/04-verification-audit.md`](docs/04-verification-audit.md) | Every verification row classed: has a command · needs one (and which) · GUI-only · witnessed |
+| [`AGENT_BOUNDARY.md`](AGENT_BOUNDARY.md) | The ledger: where a model acts and where a person decides, one row per responsibility, a dated model line per row tried |
+| [`lab/`](lab/) | `agent-runs/` — the evidence behind each 🔨 ledger row · `agent/run.py` — the bare-API runner · `check_secrets.sh` — refuses a transcript with a key in it |
 | [`docs/adr/`](docs/adr/) | Decisions that would otherwise look arbitrary |
 | [`phases/`](phases/) | One runbook per phase — prerequisites · hops · how it fails · verification · acceptance · escape hatch |
 | [`EXPLAIN.md`](EXPLAIN.md) | The same chain with zero jargon — and a stated test for whether it worked |

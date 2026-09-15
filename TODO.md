@@ -151,14 +151,43 @@ column.
 📌 The read-only commands on rows 2, 4 and 5 are ones the Minimum tier can run; the rest of the
 rows carry the check as the phase states it, which is item 3's job to turn into commands.
 
-### 2. Phase 3 — the lab's own files
+> 🆕 **2026-09-15 — the unit from here on is a hop, one a week.** A hop is one verification row
+> turned into a command and run, or one runbook section written to the ADR-0002 shape, or one
+> ledger row handed to a model and recorded. Three hours at most; a hop that runs over is split,
+> not stretched. Its commit message starts `hop:`. The order below is the order; the items that
+> were already here keep their numbers, and two ledger items are added after item 2. The
+> ledger itself, the audit, the rules and the lab scaffolding were set up in one pass
+> (ADR-0002) and are not hops.
+
+### 2. Phase 3 — the lab's own files  ← **hop 1**
 
 The two packaging-automation overrides, the generated item metadata, and the manifest, under
 `phases/3-software/lab/`, labelled with the boundary they carry: *as run — one machine, one
 afternoon, two applications, no fleet.* The only phase with a run behind it is the only phase
 allowed to ship files.
 
-### 3. A **Command** column in every Verification table
+### 2a. The first 🔨 ledger row — phase 3, row 3.2 or 3.3  ← **hop 2**
+
+Hand one phase-3 responsibility to a model and record it: the import-and-derive row (3.2 — the
+proposed blocking array, checked against the client run with the application open) or the
+override-and-chain row (3.3 — the override from a parent recipe, the chain read back with its
+signature step). Three models at least — the current hosted default from two vendors and the
+local `ornith-1.5:9b` — on the same task, through the agent CLI, inside the minimum tier. The
+result is one line per model in [`AGENT_BOUNDARY.md`](AGENT_BOUNDARY.md) and one file per model
+in `lab/agent-runs/`, screened by `lab/check_secrets.sh`. This is the first time the ledger says
+anything a reader can check.
+
+### 2b. A ledger row from docs/03  ← **hop 3**
+
+Row I.1 (reconcile the estate against the ownership record) or I.4 (installed profiles against
+what was sent): the page a hiring reader opens first, so the first place the boundary should be
+visible with a date on it. Same three models, same record.
+
+### 3. A **Command** column in every Verification table  ← **hops 4 onward, one row each**
+
+[docs/04](docs/04-verification-audit.md) lists the sixteen rows that need one, with the command
+or API call that could produce it and the tier that could run it. Each row is a hop.
+
 
 Phase 3 has one. Phases 1, 2, 4 and 5 have checks and expected results with no command. Where a
 lab tier can produce the command, it goes in; where none can, the row names the tier that could.
