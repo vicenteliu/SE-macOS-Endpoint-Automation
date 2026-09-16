@@ -233,8 +233,14 @@ unmanaged machine anyway. Phases 4, 5 and 6 get no script: nothing in them runs 
 
 ### 5. The earlier remainder
 
-Per-product detail in the selection document; build instructions per lab tier; putting
-`EXPLAIN.md`'s verify question to an actual reader.
+- ✅ **Build instructions per lab tier** — **written 2026-09-16** ([docs/02](docs/02-lab-tiers.md)
+  `## Build`): the Minimum tier from the actual working setup on the reference Mac (built-in
+  Apache 2.4.67, Munki 7.3.0, AutoPkg 2.9.0, the repo symlinked into the docroot, the identity-
+  reference build), Mid and Full named as specs with what each adds and why it is not built here.
+- Per-product detail in the selection document ([docs/01](docs/01-mdm-selection.md)) — Jamf/WS1
+  are 🔨, Intune/Kandji 🧭; keep the honest footing.
+- Putting `EXPLAIN.md`'s verify question to an actual reader — cannot be met alone; needs a reader
+  outside the domain to name a trade-off they would decide differently.
 
 ### 2c. ✅ `docs/05-troubleshooting.md` — the symptom-first page  ← **hop, done 2026-09-16**
 
