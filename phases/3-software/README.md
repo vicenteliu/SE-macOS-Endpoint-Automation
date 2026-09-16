@@ -124,6 +124,8 @@ overrides, the generated item metadata, the manifest, the catalog, the client lo
 ⚠️ The import command is **not** fully non-interactive even with the non-interactive flag — it
 still prompts about creating a product icon. Anything scripting it has to account for that.
 
+
+📄 Re-verified read-only on the lab Mac: [`lab/verify.out`](../../lab/verify.out) — `403` on the repo directory, `200` on `catalogs/all` and `catalogs/testing`.
 ## Acceptance
 
 🔴 **A first install is not the acceptance criterion. An unattended upgrade is.**

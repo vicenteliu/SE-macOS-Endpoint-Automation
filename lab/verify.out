@@ -1,0 +1,48 @@
+
+===== the machine (management state decides how every row below reads) =====
+  $ sw_vers
+  ProductName:		macOS
+  ProductVersion:		26.6.2
+  BuildVersion:		25G83
+
+===== Phase 1 — enrolment =====
+
+[1.2] how the machine enrolled — or that it did not
+  $ profiles status -type enrollment
+  Enrolled via DEP: No
+  MDM enrollment: No
+
+[1.4] volume ownership, and the recovery path the machine actually has
+  $ fdesetup status
+  FileVault is On.
+  $ diskutil apfs listCryptoUsers /
+  Cryptographic users for disk3s1s1 (2 found)
+  |
+  +-- <local-user-crypto-uuid>
+  |   Type: Local Open Directory User
+  |   Volume Owner: Yes
+  |
+  +-- EBC6C064-0000-11AA-AA11-00306543ECAC
+      Type: Personal Recovery User
+      Volume Owner: Yes
+   
+
+===== Phase 2 — configuration =====
+
+[2.1] the configuration profiles the machine actually carries
+  $ profiles list
+  There are no configuration profiles installed for user 'lab-user'
+  # system scope needs root: sudo profiles list ; a byte-for-byte payload check is
+  #   sudo profiles show -output stdout-xml — both empty on an unmanaged machine
+
+===== Phase 3 — software distribution (needs the munki repo reachable) =====
+
+[3.1] the repository is a web server: the directory is closed, a catalog is served
+  $ curl -so /dev/null -w '%{http_code}\n' http://localhost/munki_repo/
+  403
+  $ curl -so /dev/null -w '%{http_code}\n' http://localhost/munki_repo/catalogs/all
+  200
+  $ curl -so /dev/null -w '%{http_code}\n' http://localhost/munki_repo/catalogs/testing
+  200
+
+===== done — read-only; nothing above changed the machine =====

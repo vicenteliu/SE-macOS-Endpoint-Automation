@@ -114,6 +114,8 @@ it is not the minimum one. Two rows are witnessed acts, not commands, and say so
 | 4 | `fdesetup status`; `diskutil apfs listCryptoUsers /` · **minimum** | An account and a token that can actually unlock and update. Presence in a console is not this check |
 | 4 | 🥇 👁 **Take a key out of escrow and unlock a machine with it** — witnessed: retrieving the key is an API call, the unlock is the act (the ledger marks it ⛔) | It works. Untested escrow is the default state and it is indistinguishable from working escrow until the day it is not |
 
+
+📄 Seen on a real (unmanaged) machine: [`lab/verify.out`](../../lab/verify.out) — `Enrolled via DEP: No / MDM enrollment: No`, FileVault on with a Personal Recovery key, no profiles installed.
 ## Acceptance
 
 🔴 **Not "a device enrolled." That proves the transport.**

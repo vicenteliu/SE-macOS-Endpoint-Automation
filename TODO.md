@@ -220,13 +220,16 @@ table as `Command · tier`, the two witnessed rows kept as 👁, and docs/04's c
 phase 4 stays ⛔ (no table). What each command *returns on a real machine* — seen vs specified by
 tier — is item 4's job, for the minimum-tier rows only.
 
-### 4. `verify.sh` — phases 1, 2 and 3 only
+### 4. ✅ `lab/verify.sh` — phases 1, 2 and 3, read-only — **run 2026-09-16**
 
-Read-only. Run once on a real machine, so that the expected output in the file is an output that
-was *seen*, including the unglamorous ones — *not enrolled* is a real expected output on an
-unenrolled machine, and is written as such. Phases 4, 5 and 6 get the Command column and no
-script: nothing in them can be run from one machine, and a script that was never run does not
-go in this repository.
+Read-only, run once on a real Mac; the capture is [`lab/verify.out`](lab/verify.out). The
+reference machine is **unmanaged** (no DEP, no MDM), which is the point — *not enrolled* is a
+real expected output, so phase 1 answers `Enrolled via DEP: No / MDM enrollment: No`, FileVault
+shows a **Personal Recovery** key rather than an MDM bootstrap token, and phase 2 shows no
+profiles installed. Phase 3 reproduced exactly against the munki repo still up on the machine
+(`403` on the directory, `200` on `catalogs/all` and `catalogs/testing`). The two system-scope
+profile checks are noted as needing root (`sudo profiles list` / `profiles show`), empty on an
+unmanaged machine anyway. Phases 4, 5 and 6 get no script: nothing in them runs from one machine.
 
 ### 5. The earlier remainder
 

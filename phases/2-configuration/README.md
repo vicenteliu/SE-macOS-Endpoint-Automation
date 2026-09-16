@@ -108,6 +108,8 @@ minimum one.
 | 2 | Install the deferral profile, then `sudo softwareupdate --list` and the update-related keys from `defaults read`; expected result is **no effect** · **one machine on the current release** | It does not take effect. If your compliance reporting still shows it applied, the reporting is the thing to fix first |
 | 4 | The management server's API: the scope object's reported count, then its enumerated member list · **mid** | The two agree. When they do not, the count was the thing being trusted |
 
+
+📄 Seen on a real (unmanaged) machine: [`lab/verify.out`](../../lab/verify.out) — `profiles list` returns none; the system-scope and payload-diff checks need root and a managed host.
 ## Acceptance
 
 A profile installs, replaces cleanly on a second install with the same identifier, and **what is on

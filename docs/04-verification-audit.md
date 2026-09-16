@@ -76,8 +76,10 @@ inherit the class from the phase they came from.
 ✅ 23 · 🔧 **0** · ⚠️ GUI-only **0** · 👁 3
 
 Nothing in this chain is GUI-only, and as of 2026-09-16 nothing is 🔧 either: every check now
-names a command or an API call and what it returns, in its phase's Verification table. The debt
-that remains is not *which command* but *what it returned on a real machine* — the minimum-tier
-rows get that from `verify.sh` (item 4); the mid/full-tier rows name the tier and wait for it, the
-same way phase 4 waits ([ADR-0001](adr/0001-specced-not-run-is-a-third-marker.md)). The three 👁
-rows are witnessed acts a command cannot replace, by design.
+names a command or an API call and what it returns, in its phase's Verification table. The
+minimum-tier rows now also have *what they returned on a real machine*: [`lab/verify.sh`](../lab/verify.sh)
+ran the phase 1/2/3 read-only checks once ([`lab/verify.out`](../lab/verify.out), 2026-09-16) on an
+**unmanaged** reference Mac — so the enrolment and profile rows carry their honest *not-enrolled /
+none* outputs, and phase 3 reproduced `403`/`200`. The mid/full-tier rows name the tier and wait
+for it, the same way phase 4 waits ([ADR-0001](adr/0001-specced-not-run-is-a-third-marker.md)).
+The three 👁 rows are witnessed acts a command cannot replace, by design.
