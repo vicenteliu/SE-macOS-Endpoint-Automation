@@ -88,13 +88,16 @@ Two more:
 
 ## Verification
 
-| | Check | Expect |
+Per row, the command or API call and what it returns; every row here needs a test directory or a
+gateway log, so the tier is named on each.
+
+| | Command · tier | Expect |
 |---|---|---|
-| 1 | Log in on a machine with the identity provider unreachable | A stated, intended outcome — **not a discovery** |
-| 2 | Enumerate which endpoints are reached by unmanaged devices | Each one served by a publicly-trusted certificate. **An internal authority on any of them is the finding** |
-| 2 | Enumerate which are reached only by managed devices | An internal authority is correct and sufficient here. A public certificate is money spent for nothing |
-| 3 | Change a password in the directory, then log in on the machine | The behaviour is the one you documented, at the interval you documented |
-| 3 | Disable an account, then attempt login on a machine that is offline | The outcome is known in advance. If nobody knows, that is the answer |
+| 1 | Block the provider's endpoints at the host firewall (`pfctl` with a scoped anchor), attempt login, read the outcome from `log show --predicate` on the authorization subsystem · **one machine bound to a test directory** | A stated, intended outcome — **not a discovery** |
+| 2 | The gateway or DNS resolver's query log for a sample of unmanaged clients; `openssl s_client -connect <endpoint>:443` per endpoint for the issuing authority · **mid** | Each one served by a publicly-trusted certificate. **An internal authority on any of them is the finding** |
+| 2 | The same, filtered to managed clients · **mid** | An internal authority is correct and sufficient here. A public certificate is money spent for nothing |
+| 3 | The directory's API for the password change; the login outcome from the authorization log · **test directory** | The behaviour is the one you documented, at the interval you documented |
+| 3 | The directory's API to disable the account; a login attempt with the provider blocked as in row 1 · **test directory** | The outcome is known in advance. If nobody knows, that is the answer |
 
 ## Acceptance
 

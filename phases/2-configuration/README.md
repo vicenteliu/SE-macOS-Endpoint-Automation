@@ -97,13 +97,16 @@ A runnable demonstration of exactly this failure is in the author's other public
 
 ## Verification
 
-| | Check | Expect |
+Per row, the command or API call and what it returns, with the tier named where it is not the
+minimum one.
+
+| | Command · tier | Expect |
 |---|---|---|
-| 1 | Read back the installed profiles on the device | The profile present with the expected identifier |
-| 1 | Install a second profile carrying the **same** identifier | **One** profile afterwards, not two — carrying the second one's content |
-| 1 | Compare what was uploaded with what landed on the device | Byte-for-byte the intended payload set. ⚠️ This check exists because the answer is not always yes |
-| 2 | On a 27.0 machine, exercise a legacy software-update deferral | It does not take effect. If your compliance reporting still shows it applied, the reporting is the thing to fix first |
-| 4 | Take the count a scope reports, then enumerate the members | The two agree. When they do not, the count was the thing being trusted |
+| 1 | `sudo profiles list` · **minimum** | The profile present with the expected identifier |
+| 1 | Push the second profile through the management server's install-profile API (`profiles install` cannot install configuration profiles on current releases), then `sudo profiles list` and count the identifier · **mid** (server) + **minimum** (read-back) | **One** profile afterwards, not two — carrying the second one's content |
+| 1 | The profile body from the management server's API; `sudo profiles show -output stdout-xml` on the machine; `diff` the payload sets · **mid** + **minimum** | Byte-for-byte the intended payload set. ⚠️ This check exists because the answer is not always yes |
+| 2 | Install the deferral profile, then `sudo softwareupdate --list` and the update-related keys from `defaults read`; expected result is **no effect** · **one machine on the current release** | It does not take effect. If your compliance reporting still shows it applied, the reporting is the thing to fix first |
+| 4 | The management server's API: the scope object's reported count, then its enumerated member list · **mid** | The two agree. When they do not, the count was the thing being trusted |
 
 ## Acceptance
 

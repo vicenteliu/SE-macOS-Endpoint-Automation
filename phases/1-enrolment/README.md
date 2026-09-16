@@ -102,14 +102,17 @@ whole phase is a machine deciding for itself whether it belongs to you, and a ma
 
 ## Verification
 
-| | Check | Expect |
+Per row, the command or API call and what it returns; the tier that produces it is named where
+it is not the minimum one. Two rows are witnessed acts, not commands, and say so.
+
+| | Command · tier | Expect |
 |---|---|---|
-| 1 | Reconcile the estate against the ownership record | They agree. **A serial in one and not the other is the finding this check exists for** |
-| 2 | Erase a device and let it enrol | Enrolment happens during Setup Assistant, not after login |
-| 2 | Inspect the enrolled record | **Supervised**, and the management profile **non-removable** |
-| 3 | Compare the management surface against a user-approved enrolment | The difference is visible and expected. If it is not, the device did not enrol the way you think |
-| 4 | Confirm volume ownership after enrolment | An account and a token that can actually unlock and update. Presence in a console is not this check |
-| 4 | 🥇 **Take a key out of escrow and unlock a machine with it** | It works. Untested escrow is the default state and it is indistinguishable from working escrow until the day it is not |
+| 1 | The management server's device-list API vs the ownership record's API (or its export where the vendor exposes none); `comm -13` the serial sets — the [row-I.1 harness](../../lab/agent/docs03-rowI.1/) runs exactly this on two synthetic exports on the minimum tier · **mid** for the live APIs | They agree. **A serial in one and not the other is the finding this check exists for** |
+| 2 | 👁 Erase and enrol — witnessed: Setup Assistant *is* the row; the result is the next row | Enrolment happens during Setup Assistant, not after login |
+| 2 | `profiles status -type enrollment` on the machine **and** the device record from the management server's API — both, the finding is a disagreement between them · **minimum** (device) + **mid** (server) | **Supervised**, the management profile **non-removable**, and the two agree |
+| 3 | `profiles status -type enrollment` on one machine of each kind; the server's API for what it believes it can do to each · **minimum** + **mid** | The difference is visible and expected. If it is not, the device did not enrol the way you think |
+| 4 | `fdesetup status`; `diskutil apfs listCryptoUsers /` · **minimum** | An account and a token that can actually unlock and update. Presence in a console is not this check |
+| 4 | 🥇 👁 **Take a key out of escrow and unlock a machine with it** — witnessed: retrieving the key is an API call, the unlock is the act (the ledger marks it ⛔) | It works. Untested escrow is the default state and it is indistinguishable from working escrow until the day it is not |
 
 ## Acceptance
 

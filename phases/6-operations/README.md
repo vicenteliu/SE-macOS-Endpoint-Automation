@@ -85,13 +85,17 @@ real reader.
 
 ## Verification
 
-| | Check | Expect |
+Per row, the query and what it returns. Four run against the ticket system's own API — the point
+of every one is that the answer must come from the data, not from a person remembering; the fifth
+is a witnessed reading.
+
+| | Command · tier | Expect |
 |---|---|---|
-| 1 | Count P0s over the last twelve months | A handful. **A monthly P0 means the scheme is decorative** |
-| 1 | Sample open incidents and read their severity | Most sitting at P2. A queue that is mostly P1 is unsorted |
-| 1 | Ask the queue *what recurred more than five times this quarter* | An answer, from the data. If it takes a person remembering, the queue is not memory |
-| 1 | Trace the last five escalations | One hop each. Three hops means the path is theoretical |
-| 3 | Give `EXPLAIN.md` to someone outside the domain | They can name a trade-off they would decide differently. *"That was clear"* is a failure |
+| 1 | The ticket system's query API, filtered by severity `P0` and a twelve-month date range; count | A handful. **A monthly P0 means the scheme is decorative** |
+| 1 | The same API, open state, grouped by severity | Most sitting at P2. A queue that is mostly P1 is unsorted |
+| 1 | The same API, grouped by category or linked problem; the count per group | An answer, from the data. If it takes a person remembering, the queue is not memory |
+| 1 | The ticket system's audit trail per ticket for the last five escalations; count the assignment hops | One hop each. Three hops means the path is theoretical |
+| 3 | 👁 Give `EXPLAIN.md` to someone outside the domain — a human reading, not a command by design | They can name a trade-off they would decide differently. *"That was clear"* is a failure |
 
 ## Acceptance
 

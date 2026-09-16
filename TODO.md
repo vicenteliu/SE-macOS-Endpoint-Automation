@@ -210,14 +210,15 @@ same record.
       the same task under a comparable permission model · `ornith-1.5:9b` PARTIAL (26 min): right
       lists, wrong counts in the summary
 
-### 3. A **Command** column in every Verification table  ← **hops 4 onward, one row each**
+### 3. ✅ A **Command** column in every Verification table  ← **done 2026-09-16, in one pass**
 
-[docs/04](docs/04-verification-audit.md) lists the sixteen rows that need one, with the command
-or API call that could produce it and the tier that could run it. Each row is a hop.
-
-
-Phase 3 has one. Phases 1, 2, 4 and 5 have checks and expected results with no command. Where a
-lab tier can produce the command, it goes in; where none can, the row names the tier that could.
+[docs/04](docs/04-verification-audit.md) already named the command or API call for each of the
+sixteen 🔧 rows and the tier that could run it, so the sixteen collapsed into one documentation
+hop rather than sixteen investigations: every row was propagated into its phase's Verification
+table as `Command · tier`, the two witnessed rows kept as 👁, and docs/04's classes flipped
+🔧 → ✅ (now ✅ 23 · 🔧 0 · 👁 3). Phases 1, 2, 5 and 6 gained the column; phase 3 already had it;
+phase 4 stays ⛔ (no table). What each command *returns on a real machine* — seen vs specified by
+tier — is item 4's job, for the minimum-tier rows only.
 
 ### 4. `verify.sh` — phases 1, 2 and 3 only
 
