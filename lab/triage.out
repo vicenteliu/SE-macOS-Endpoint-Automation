@@ -1,0 +1,25 @@
+
+===== STAGE 1 · COLLECT  (🤖 read-only — a script may do this unattended) =====
+  captured diagnostics from the host, read-only, in: <repo>/lab/agent/docs05-rowsT.1-T.2/fixture
+    catalog-curl.txt
+    console-record.txt
+    fdesetup.txt
+    keychain-identity.txt
+    profiles-list.txt
+    profiles-status.txt
+  bundle assembled (35 lines). NOT sent anywhere — that is a person's act.
+
+===== STAGE 2 · CLASSIFY  (🤖 a model names the probable cause with its evidence line) =====
+  The USB-restriction setting is not in effect because its configuration profile (com.lab.restrictions.usb), which the management server records as deployed, is absent from the device's installed-profile list, as shown by console-record.txt (server lists four scoped profiles incl. com.lab.restrictions.usb) and profiles-list.txt (only three local profiles; com.lab.restrictions.usb not among them).
+
+===== STAGE 3 · PROPOSE  (🤖 name the remediation from docs/05 — 🔴 mark what a person must gate) =====
+  symptom class: docs/05 · B — a profile applied in the console but not in effect
+    🤖 automatable: re-push the profile (reversible — the payload replaces itself)
+    🤖 automatable: re-check the device with 'profiles list' afterwards (read-only)
+    🔴 GATE (a person): if it is a non-removable profile, do NOT unset it — that is a future wipe
+    🔴 GATE (a person): if the host has not checked in, decide re-enrolment — which on a supervised Mac is a wipe
+
+===== STAGE 4 · THE GATE  (🔴 nothing above changed the host; a person decides from here) =====
+  Proposed, not run. A person confirms the 🔴 items and runs them.
+  Severity and the trigger to remediate stay with a person by design (ledger T.3, ⛔).
+  Rule: the line is the cost of being wrong on THIS machine, not the difficulty of the command.

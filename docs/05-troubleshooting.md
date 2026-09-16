@@ -125,6 +125,35 @@ The rule underneath all of it is the repository's: **the line is the cost of bei
 machine, not the difficulty of the command.** A password reset is safe everywhere and automates;
 *reimage it* is the fast advice that is wrong on the one machine it is wrong on, and it does not.
 
+### The flow, wired end to end (a demonstration)
+
+The edges above are a pipeline, and its last stage is a wall:
+
+```
+  collect ──▶ classify ──▶ propose ──▶ │ GATE │
+   🤖 read-only  🤖 a model   🤖 name the   🔴 a person decides
+   diagnostics   names the    remediation   and runs it; severity
+   → a bundle    cause + the  from docs/05  and the trigger stay
+   (T.1)         evidence     with 🤖/🔴    a person's (T.3, ⛔)
+                 line (T.2)   marks
+```
+
+[`lab/triage.sh`](../lab/triage.sh) runs it, and [`lab/triage.out`](../lab/triage.out) is a run on
+the T.1/T.2 fixture: it **collects** the read-only captures into a bundle (and says it is *not sent*
+— that is a person's act), **classifies** them with the local model — *"the USB-restriction
+profile the server records as deployed is absent from the device (console-record vs profiles-list)"*
+— **proposes** symptom B's remediation with its marks (🤖 re-push the profile and re-check;
+🔴 do not unset a non-removable profile, and re-enrolment on a supervised Mac is a wipe), and then
+**stops**. Nothing on the host changed; a person decides from the gate.
+
+It wires the pieces this repository already has — [`verify.sh`](../lab/verify.sh) is the collect
+stage against a real host, [`run.py`](../lab/agent/run.py) is the classify model call, and this
+page's symptom tables are the propose lookup. It is a thinking aid and a demo, not a product: the
+value is that the automation **runs up to the gate and no further**, which is the same boundary the
+[ledger](../AGENT_BOUNDARY.md) draws (T.1 collect · T.2 classify · T.3 ⛔ decide). On a real fleet
+the collect stage points at the host and the classify stage can be any model; the gate does not
+move.
+
 ## What AI can assist, and what a person decides
 
 Per responsibility, with the model and the date on every row that was actually tried, in
