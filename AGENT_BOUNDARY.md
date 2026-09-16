@@ -7,8 +7,9 @@ moves as models change and a boundary with no date on it is an opinion.
 **Rules** (ADR-0002):
 
 - A row is a **Responsibility Item**: one duty concrete enough that the line through it can be
-  drawn and argued. Rows come from this repository's own runbooks and from
-  [docs/03](docs/03-inheriting-a-fleet.md); nothing here was invented for the ledger.
+  drawn and argued. Rows come from this repository's own runbooks, from
+  [docs/03](docs/03-inheriting-a-fleet.md) and from [docs/05](docs/05-troubleshooting.md);
+  nothing here was invented for the ledger.
 - **Human decides** / **Agent executes** / **How** / **How you know it worked** are the four lines
   every row carries. The fourth is an **Acceptance** — a command or an API call and what it must
   return — never a feeling that it worked.
@@ -54,6 +55,14 @@ moves as models change and a boundary with no date on it is an opinion.
 | I.2 | Find out how devices enrolled, on a sample | The sample size, and what *supervised, non-removable* has to be true of | Run the read-only check on each sampled machine and classify the results | `profiles status -type enrollment` via the management server's script channel or SSH | Every sampled machine classified, and every classification traceable to its command output | | | 🧭 | |
 | I.3 | Take a key out of escrow and unlock a machine with it | Everything — which machine, and whether the result is trusted | Only the list of machines whose record claims an escrowed key | The management server's API | The person unlocked the machine, today, on the escrow the estate actually uses | | | ⛔ — the row exists to be **witnessed**; an unlock a model reports is the untested escrow the row is there to catch | |
 | I.4 | Compare installed profiles against what the console says it sent | What counts as drift worth acting on | Read both sides and diff them, per machine in the sample | `sudo profiles list` on the machine; the profile set from the management server's API | A byte-for-byte match per profile, or a listed difference — **not** a console count | | | 🧭 | |
+
+## Troubleshooting ([docs/05](docs/05-troubleshooting.md))
+
+| # | Responsibility | Human decides | Agent executes | How | How you know it worked | Model | Tested on | Status | Run |
+|---|---|---|---|---|---|---|---|---|---|
+| T.1 | Collect a diagnostic bundle on a symptomatic host | Whether it may leave the host as-is (it carries configuration and logs), and which incident it attaches to | The fixed read-only command set and the listing of what was gathered — never the send | A management-server script channel or SSH: `profiles status -type enrollment` · `sudo profiles list` · `fdesetup status` · `diskutil apfs listCryptoUsers /` · the catalogue `curl` · the keychain identity's expiry | The bundle exists and its contents were listed to the person **before** anything left the host | | | 🧭 | |
+| T.2 | Classify a symptom to a probable cause | The remediation, and whether the classification is trusted enough to act on | Reading the read-only outputs and naming the most likely cause **with the output line that supports it** — no change made | The outputs of the T.1 reads, per the [docs/05](docs/05-troubleshooting.md) symptom tables | Every candidate cause traces to a command's output; the working tree and the host are untouched; nothing was remediated | | | 🧭 | |
+| T.3 | Decide the severity and trigger the remediation | Always. Severity is business impact and the trigger is the release of a change onto real machines | The proposed severity **from blast radius and reversibility**, and the remediation as a diff or a named command — not run | The queue and the T.2 classification; the change shown as a diff | The severity and the trigger stay with a person; the agent's output is a recommendation and the machines are unchanged until a person acts | | | ⛔ — severity and the remediation trigger stay with a person by design; automation proposes, a person releases | |
 
 ---
 

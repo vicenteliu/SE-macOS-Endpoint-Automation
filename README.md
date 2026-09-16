@@ -25,6 +25,7 @@ kept private.
 | **fifteen** | [the chain, hop by hop](docs/00-the-chain.md), then [phase 4](phases/4-network-access/) — the worked example of *specified, and deliberately not run* |
 | **a fleet to run** | the runbooks in order, [1](phases/1-enrolment/) → [6](phases/6-operations/) |
 | **a fleet you inherited** | [docs/03](docs/03-inheriting-a-fleet.md) — the same verification rows, in the order you run them on arrival, each with what you decide from the answer |
+| **a fault to work now** | [docs/05](docs/05-troubleshooting.md) — symptom → read-only diagnosis → decision → remediation, with 🤖 what automates and 🔴 what a person gates |
 | **someone to explain it to** | [EXPLAIN.md](EXPLAIN.md) — the same chain with zero jargon |
 | **a model you want to hand part of this to** | [AGENT_BOUNDARY.md](AGENT_BOUNDARY.md) — per responsibility, what a person decides and what a model executes, with the model and the date on every row that was actually tried |
 
@@ -162,6 +163,7 @@ script appears only where one was actually run.
 | [`docs/02-lab-tiers.md`](docs/02-lab-tiers.md) | Three environment tiers, defined by **the hop each one cannot verify** |
 | [`docs/03-inheriting-a-fleet.md`](docs/03-inheriting-a-fleet.md) | The verification rows in the order you run them on a fleet you did not build, each with the decision the answer forces |
 | [`docs/04-verification-audit.md`](docs/04-verification-audit.md) | Every verification row classed: has a command · needs one (and which) · GUI-only · witnessed |
+| [`docs/05-troubleshooting.md`](docs/05-troubleshooting.md) | Symptom-first: read-only diagnosis → what it means → decide → remediate, every remediation marked 🤖 automates or 🔴 a person gates |
 | [`AGENT_BOUNDARY.md`](AGENT_BOUNDARY.md) | The ledger: where a model acts and where a person decides, one row per responsibility, a dated model line per row tried |
 | [`lab/`](lab/) | `agent-runs/` — the evidence behind each 🔨 ledger row · `agent/run.py` — the bare-API runner · `check_secrets.sh` — refuses a transcript with a key in it |
 | [`docs/adr/`](docs/adr/) | Decisions that would otherwise look arbitrary |

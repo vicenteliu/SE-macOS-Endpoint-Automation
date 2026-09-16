@@ -231,3 +231,25 @@ go in this repository.
 
 Per-product detail in the selection document; build instructions per lab tier; putting
 `EXPLAIN.md`'s verify question to an actual reader.
+
+### 2c. ✅ `docs/05-troubleshooting.md` — the symptom-first page  ← **hop, done 2026-09-16**
+
+The counterpart to docs/03: docs/03 is arrival-first (*what is true here*), docs/05 is
+symptom-first (*something broke — read, mean, decide, remediate*). Seven symptom groups across
+the chain (device stopped being managed · profile applied-not-effective · FileVault/escrow ·
+software won't update · the network cohort · directory-unreachable login · the recurring fault),
+each row a read-only diagnosis → what it means → decide → remediate, and **every remediation
+marked 🤖 (a script/agent can, read-only or reversible) or 🔴 (a person gates it — wipe, unlock,
+trust re-pin, promotion, severity)**. Each row links its phase and inherits that phase's footing.
+
+- [x] The three rules — diagnose read-only first; the boundary is cost-of-being-wrong not
+      difficulty; a symptom with no reproduction is a report not a fault
+- [x] The automation stated once, with its honest edge — collect / reconcile / re-apply the
+      reversible; the gate is everything irreversible or wide
+- [x] AGENT_BOUNDARY gains a **Troubleshooting** section: T.1 collect a diagnostic bundle · T.2
+      classify a symptom to a cause · T.3 ⛔ decide severity and trigger the remediation
+- [x] README reading-table + docs index; de-id — no employer, no fleet, no number
+- [x] Private review half: card `70-troubleshooting-and-the-boundary` in the learning plan
+      (`learning/macos-endpoint-stack/cards/`), L1/L2/L3 + the read-only pass + a 90s spoken shape
+- [ ] **Accept-Say** unrecorded (as every card here); and T.1/T.2 not yet handed to a model — the
+      next ledger hop for this repo
