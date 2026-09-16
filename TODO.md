@@ -251,5 +251,8 @@ trust re-pin, promotion, severity)**. Each row links its phase and inherits that
 - [x] README reading-table + docs index; de-id — no employer, no fleet, no number
 - [x] Private review half: card `70-troubleshooting-and-the-boundary` in the learning plan
       (`learning/macos-endpoint-stack/cards/`), L1/L2/L3 + the read-only pass + a 90s spoken shape
-- [ ] **Accept-Say** unrecorded (as every card here); and T.1/T.2 not yet handed to a model — the
-      next ledger hop for this repo
+- [x] **T.1/T.2 handed to the two hosted models** (2026-09-16): `claude-opus-5` and `gpt-6-astra`
+      both PASS on both — gather don't send, classify don't fix; `lab/agent/docs05-rowsT.1-T.2/`,
+      four records in `lab/agent-runs/`. The local `ornith-1.5:9b` line is ⏳, waiting on the
+      lighter local harness (the row-3.3 follow-up) so it measures the model, not the CLI
+- [ ] **Accept-Say** for card 70 unrecorded (as every card here)

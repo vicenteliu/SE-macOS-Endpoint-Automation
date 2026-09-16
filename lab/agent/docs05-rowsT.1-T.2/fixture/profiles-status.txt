@@ -1,0 +1,4 @@
+# captured: profiles status -type enrollment   (host lab-mac-07, 2026-09-16T04:11:02Z)
+Enrolled via DEP: Yes
+MDM enrollment: Yes (User Approved)
+MDM server: https://lab-mdm.example.invalid/mdm

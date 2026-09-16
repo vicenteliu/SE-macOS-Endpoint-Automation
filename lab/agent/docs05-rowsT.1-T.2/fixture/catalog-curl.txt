@@ -1,0 +1,2 @@
+# captured: curl -so /dev/null -w '%{http_code}' http://lab-munki.example.invalid/catalogs/production   (host lab-mac-07)
+200

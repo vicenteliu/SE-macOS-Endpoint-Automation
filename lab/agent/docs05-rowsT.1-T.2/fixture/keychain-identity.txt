@@ -1,0 +1,4 @@
+# captured: the system keychain client identity and its expiry   (host lab-mac-07)
+identity: com.lab.wifi.corp client cert
+issuer: Lab Issuing CA
+not_after: 2027-03-14T00:00:00Z

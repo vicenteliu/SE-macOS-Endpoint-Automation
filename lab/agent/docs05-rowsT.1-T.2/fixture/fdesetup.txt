@@ -1,0 +1,5 @@
+# captured: fdesetup status; diskutil apfs listCryptoUsers /   (host lab-mac-07)
+FileVault is On.
+Cryptographic users for disk3s1 (2 found)
++-- 5B9F...  Type: Local Open Directory User
++-- EBF2...  Type: MDM Bootstrap Token External Key

@@ -1,0 +1,5 @@
+# captured: sudo profiles list   (host lab-mac-07, 2026-09-16T04:11:07Z)
+There are 3 configuration profiles installed
+profileIdentifier: com.lab.mdm.enrollment
+profileIdentifier: com.lab.wifi.corp
+profileIdentifier: com.lab.filevault.escrow
