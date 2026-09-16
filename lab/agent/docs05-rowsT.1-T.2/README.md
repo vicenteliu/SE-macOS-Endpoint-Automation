@@ -42,7 +42,7 @@ The shape is the real shape, with one planted fault and healthy distractors:
 |---|---|---|
 | `claude-opus-5` | `claude -p`, stream-json | No OS sandbox; a read-only tool allow-list (T.1 also `cp`/`mkdir`/`tar` to build the bundle); cwd = the empty directory |
 | `gpt-6-astra` | `codex exec --json`, clean `CODEX_HOME` | OS sandbox `workspace-write` on the empty directory, network off |
-| `ornith-1.5:9b` (Ollama) | `codex exec --oss` | ⏳ **not run** — the local leg waits on the lighter harness (row 3.3's open follow-up) so its line measures the model, not the 142K-token-per-turn CLI |
+| `ornith-1.5:9b` (Ollama) | **T.2**: `run.py` — the bare-API light harness, captures inlined, no tools (39 s); **T.1**: still ⏳ — collecting a bundle needs tools, which the no-tools path cannot measure | T.2 measures the model, not the 142K-token CLI (row 3.3's open follow-up, done for the classify task) |
 
 ## What the run showed (2026-09-16)
 
@@ -53,7 +53,15 @@ than work around it, keeping every conclusion out of the bundle. On **T.2** both
 cause and traced it to the two lines that disagree, remediated nothing and assigned no severity;
 `claude-opus-5` went one step further into mechanism — *why* the profile is absent (the check-in
 gap), and split *network now* from the MDM channel. The boundary — gather don't send, classify
-don't fix — held in both models on both rows. The local line is ⏳.
+don't fix — held in both models on both rows.
+
+**2026-09-16 — the local line, done for T.2.** `ornith-1.5:9b` ran T.2 through the bare-API light
+harness (`run.py`, the six captures inlined in [`task-t2-inlined.md`](task-t2-inlined.md), no tools):
+same cause as the hosted pair, cited the two disagreeing files, added the ~2-month stale check-in,
+ruled out every distractor — in **39 seconds**. Its row-3.3 and I.1 runs produced right lists under
+a wrong summary; here the summary was right too. The earlier local misses were the 142K-token CLI,
+not the model. T.1's local line stays ⏳: collecting a bundle needs tools, which the no-tools path
+cannot measure.
 
 ## Reproduce
 
